@@ -22,14 +22,14 @@ namespace ClientConfiguration.Infrastructure.SqlServer
             _configuration = configuration;
         }
 
-        public async Task<ClientConfigDTO> GetEligibilityClientConfigurationById(long id)
+        public async Task<ClientConfig> GetEligibilityClientConfigurationById(long id)
         {
             try
             {
                 var query = Sql.GetClientConfigByEligibilityClientConfigId.Value;
                 using (var conn = new SqlConnection(this._configuration.Value.SQL_CONNECTION_STRING))
                 {
-                    var clientConfig = await conn.QueryAsync<ClientConfigDTO>(query, new { ID = id });
+                    var clientConfig = await conn.QueryAsync<ClientConfig>(query, new { ID = id });
 
                     return clientConfig.FirstOrDefault();
                 }

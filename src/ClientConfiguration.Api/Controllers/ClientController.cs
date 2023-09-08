@@ -31,7 +31,7 @@ namespace ClientConfiguration.Api.Controllers
         [ProducesResponseType(400)]
         [ProducesResponseType(404)]
         [Route("Clients/LoadByEligibilityClientConfiguration/{id}")]
-        public async Task<ActionResult<ClientConfigDTO>> GetEligibilityClientConfigurationById([FromRoute] int id)
+        public async Task<ActionResult<ClientConfig>> GetEligibilityClientConfigurationById([FromRoute] int id)
         {
             var getEligibilityClientConfigById = new GetEligibilityClientConfigByIdQuery { Id = id };
 

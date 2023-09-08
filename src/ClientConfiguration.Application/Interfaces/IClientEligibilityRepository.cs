@@ -5,6 +5,6 @@ namespace ClientConfiguration.Application.Interfaces
 {
     public interface IClientEligibilityRepository
     {
-        Task<ClientConfigDTO> GetEligibilityClientConfigurationById(long id);
+        Task<ClientConfig> GetEligibilityClientConfigurationById(long id);
     }
 }
