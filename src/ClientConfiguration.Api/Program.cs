@@ -1,5 +1,4 @@
 ﻿using Lamar.Microsoft.DependencyInjection;
-using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
@@ -19,7 +18,6 @@ namespace ClientConfiguration.Api
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
-                    webBuilder.UseUrls("http://localhost:5000");
                 });
     }
 }
